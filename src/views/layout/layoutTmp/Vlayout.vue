@@ -2,7 +2,7 @@
   <div>
     <layoutHeader/>
     <router-view/>
-    <layoutFooter/>
+    <layoutFooter :isShow="isTabBar"/>
   </div>
 </template>
 
@@ -16,6 +16,20 @@
     },
     data() {
       return {}
+    },
+    watch: {
+      '$route' (val) {
+        if(val.name === 'home'){
+          document.getElementsByTagName('body')[0].className = 'index'
+        }else{
+          document.getElementsByTagName('body')[0].className = ''
+        }
+      }
+    },
+    computed:{
+      isTabBar(){
+        return this.$route.meta.tabBar
+      }
     },
     methods: {}
   }

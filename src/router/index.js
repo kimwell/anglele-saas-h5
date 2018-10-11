@@ -28,8 +28,18 @@ export default new Router({
       name: 'statisticsManage',
       component: resolve => require(['@/views/statisticsManage/index.vue'], resolve),
       meta: {
-        title: '统计',
+        title: '统计报表',
         hideInMenu: true
+      }
+    },{
+      path: '/statisticsManage/transactionData',
+      name: 'transactionData',
+      component: resolve => require(['@/views/statisticsManage/transactionData/index.vue'], resolve),
+      meta: {
+        title: '交易汇总',
+        hideInMenu: true,
+        tabBar: false,
+        isBack: true
       }
     },{
       path: '/userManage',

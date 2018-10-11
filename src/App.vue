@@ -52,7 +52,9 @@
     -ms-text-size-adjust: none;
     text-size-adjust: none
   }
-  
+  body.index{
+    background:linear-gradient(90deg,rgba(72,207,207,1) 1%,rgba(22,214,186,1) 100%);
+  }
   body,
   button,
   dd,

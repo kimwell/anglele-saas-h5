@@ -1,8 +1,8 @@
 <template>
-  <div class="tab-bar">
+  <div class="tab-bar" v-if="isShow">
     <div class="tab-bar-inner">
       <router-link v-for="(item,index) in navData" :key="index" :to="item.route">
-        <span>{{item.icon}}</span>
+        <span class="iconfont" :class="item.icon"></span>
         <span class="name">{{item.name}}</span>
       </router-link>
     </div>
@@ -11,23 +11,29 @@
 
 <script>
   export default {
+    props: {
+      isShow: {
+        type: Boolean,
+        default: true
+      }
+    },
     data() {
       return {
         navData: [{
           name: '首页',
-          icon: '',
+          icon: 'icon-shouye1',
           route: {
             name: 'home'
           }
         }, {
           name: '统计',
-          icon: '',
+          icon: 'icon-dingdan1',
           route: {
             name: 'statisticsManage'
           }
         }, {
           name: '我的',
-          icon: '',
+          icon: 'icon-zhanghao1',
           route: {
             name: 'userManage'
           }
@@ -49,7 +55,7 @@
     left: 0;
     right: 0;
     background-color: #fff;
-    padding-top: 12px;
+    padding-top: 10px;
     height: 96px;
     z-index: 9999;
     display: -webkit-flex;
@@ -75,7 +81,8 @@
     text-align: center;
   }
   
-  .tab-bar a.router-link-active .name {
+  .tab-bar a.router-link-active .name,
+  .tab-bar a.router-link-active .iconfont {
     color: #23D5C0;
   }
   
