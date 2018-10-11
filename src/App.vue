@@ -6,15 +6,8 @@
 
 <script>
 
-  import NavBar from './components/NavBar.vue'
-  import Headers from './components/Headers.vue'
-  
   export default {
     name: 'App',
-    components: {
-      NavBar,
-      Headers
-    }
   };
 </script>
 
